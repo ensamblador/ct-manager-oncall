@@ -1,0 +1,8 @@
+{
+    "stack-name": "dev",
+    "tags": {
+        "aplicacion": "Contacto Total",
+        "ambiente": "dev",
+        "group": "on-call"
+    }
+}
