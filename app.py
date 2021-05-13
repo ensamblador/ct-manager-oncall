@@ -11,9 +11,11 @@ from aws_cdk import core
 
 from ct_manager_oncall.ct_manager_oncall_stack import CtManagerOncallStack
 
+from project_config import TAGS,STACK_NAME
+
 
 app = core.App()
-CtManagerOncallStack(app, "CtManagerOncallStack",
+CtManagerOncallStack(app, f"CT-{STACK_NAME.upper()}-ONCALL-",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
@@ -31,4 +33,7 @@ CtManagerOncallStack(app, "CtManagerOncallStack",
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
 
+if TAGS.keys():
+    for k in TAGS.keys():
+        core.Tag.add(app,k,TAGS[k])
 app.synth()
