@@ -2,3 +2,4 @@ boto3
 aws-cdk.core
 aws-cdk.aws_lambda
 aws_cdk.aws_ssm
+aws_cdk.aws_dynamodb
